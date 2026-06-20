@@ -59,11 +59,8 @@ cliente = mongomock.MongoClient()
 db = cliente['loja_banco']
 produtos = db['produtos']
 
-# ------------------------------------------------------------------------------
-# BLOCO 6: TRANSAÇÃO (O Botão de Segurança "Tudo ou Nada")
-# ------------------------------------------------------------------------------
 print("\n [TRANSAÇÃO]: Iniciando uma simulação de venda segura...")
-# Adicionando um mouse rapidamente para testar a venda
+
 produtos.insert_one({"nome": "Mouse Sem Fio", "preco": 50.0, "estoque": 5})
 # Abrindo uma sessão trancada com o banco
 # A biblioteca mongomock não suporta sessões, então este bloco será comentado
